@@ -26,3 +26,44 @@ h1, h2, h3 {
   border-radius: 4px;
   font-size: 0.85rem;
 }
+
+.card-curriculum {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.profile-header .avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #004680;
+  margin-bottom: 10px;
+}
+
+.role {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-top: -8px;
+}
+
+.project-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #004680;
+  padding: 12px;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.skills-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
