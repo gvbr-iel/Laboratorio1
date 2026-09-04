@@ -1,0 +1,131 @@
+/* Contenido generado por Google Gemini AI */
+/* Importación de fuentes sugeridas en el README */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@600;700&display=swap');
+
+/* 1. Estilos Globales */
+body {
+  background-color: #f8f9fa; /* Fondo del sitio (Gris claro tenue) */
+  font-family: 'Open Sans', Arial, sans-serif; /* Tipografía para texto general */
+  color: #212529; /* Texto Principal */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', 'Segoe UI', sans-serif; /* Tipografía de encabezaos */
+  color: #004680; /* Color Primario (Azul corporativo) */
+  margin-top: 0;
+}
+
+/* 2. Tarjeta de Currículum (.card-curriculum) */
+.card-curriculum {
+  background-color: #ffffff; /* Fondo blanco */
+  max-width: 650px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  border: 1px solid #e9ecef; /* Borde suave */
+  box-sizing: border-box;
+}
+
+/* 3. Encabezado (.profile-header) */
+.profile-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Avatar redondeado */
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #004680;
+}
+
+.profile-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.profile-header h2 {
+  font-size: 1.1rem;
+  color: #6c757d; /* Texto Secundario */
+  font-weight: 400;
+}
+
+/* 4. Resumen Profesional (.profile-summary) */
+.profile-summary {
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* 5. Proyecto Destacado (.project-box) */
+.project-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #004680;
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.project-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.project-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 6. Habilidades Técnicas (.badge-skill) */
+.skills-container {
+  margin-bottom: 25px;
+}
+
+.skills-container h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.badge-skill {
+  display: inline-block;
+  background-color: #e9ecef; /* Fondo de la etiqueta */
+  color: #004680; /* Texto del badge */
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+/* 7. Contacto y Enlaces (.contact-links) */
+.contact-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.contact-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #004680;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.contact-links a:hover {
+  background-color: #003360; /* Color al pasar el cursor */
+}
