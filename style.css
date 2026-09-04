@@ -1,0 +1,28 @@
+/* Estilos aplicados según acuerdos de diseño */
+body {
+  background-color: #254f9c; /* Fondo azul oscuro acordado */
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #212529;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  color: #004680; /* Azul corporativo */
+}
+
+.card-curriculum {
+  background-color: #ffffff;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.badge-skill {
+  background-color: #e9ecef;
+  color: #004680;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
