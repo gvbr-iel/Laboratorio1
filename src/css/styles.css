@@ -161,3 +161,17 @@ h1, h2, h3 {
 #gabriel .contact-links a:hover {
   opacity: 0.85;
 }
+
+/* ==========================================
+   Paso 5: Diseño Responsivo (Media Query)
+   ========================================== */
+@media (max-width: 600px) {
+  .team-container {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    padding: 1rem 0.5rem;       /* Reduce los márgenes laterales */
+  }
+
+  .card-curriculum {
+    padding: 1.25rem;           /* Ajusta el espacio interno de las tarjetas */
+  }
+}
