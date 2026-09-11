@@ -160,3 +160,38 @@ h1, h2, h3 {
   font-size: 0.85rem;
   font-weight: 600;
 }
+
+/* Pseudo-clases para interactividad */
+.contact-links a {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-links a:hover {
+  background-color: var(--color-primary-hover); /* Cambio de color al pasar el cursor[cite: 2] */
+  transform: translateY(-2px);
+}
+
+.contact-links a:focus {
+  outline: 2px solid var(--color-primary); /* Accesibilidad con teclado[cite: 2] */
+  outline-offset: 2px;
+}
+
+/* Media Query para pantallas pequeñas (Móviles) */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .card-curriculum {
+    padding: 1.25rem;
+  }
+
+  .contact-links {
+    flex-direction: column; /* Cambia a columna en celulares */
+    width: 100%;
+  }
+
+  .contact-links a {
+    width: 100%;
+  }
+}
