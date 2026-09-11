@@ -1,0 +1,26 @@
+:root {
+  /* 1. Paleta de Colores */
+  --bg-site: #f8f9fa;             /* Fondo del sitio (Gris claro tenue) */
+  --bg-card: #ffffff;             /* Fondo de tarjeta (Blanco) */
+  --color-primary: #004680;       /* Color Primario - Encabezados y Acentos (Azul corporativo) */
+  --text-main: #212529;           /* Texto Principal (Gris oscuro) */
+  --text-secondary: #6c757d;      /* Texto Secundario / Subtítulos (Gris medio) */
+  --badge-bg: #e9ecef;            /* Fondo de badges de habilidades */
+  --badge-text: #004680;          /* Texto de badges de habilidades */
+
+  /* 2. Tipografía */
+  --font-headings: 'Roboto', 'Segoe UI', sans-serif;
+  --font-body: 'Open Sans', Arial, sans-serif;
+}
+
+/* Aplicación inicial global opcional */
+body {
+  background-color: var(--bg-site);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-headings);
+  color: var(--color-primary);
+}
