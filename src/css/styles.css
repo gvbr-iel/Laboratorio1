@@ -137,3 +137,27 @@ h1, h2, h3 {
   padding: 0.35rem 0.75rem;
   border-radius: 50px;
 }
+
+#gabriel .contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-top: 1px solid var(--badge-bg);
+  padding-top: 1.25rem;
+}
+
+#gabriel .contact-links a {
+  background-color: var(--color-primary);
+  color: var(--bg-card);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+}
+
+#gabriel .contact-links a:hover {
+  opacity: 0.85;
+}
