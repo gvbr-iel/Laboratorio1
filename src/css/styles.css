@@ -97,12 +97,66 @@ h1, h2, h3 {
   color: var(--text-main);
 }
 
-/* 4. Badges de Habilidades */
+/* Badges de Habilidades */
 .badge-skill {
   background-color: var(--badge-bg);
   color: var(--badge-text);
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* CSS Grid para el contenedor principal de tarjetas */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flexbox para la estructura interna de la Tarjeta */
+.card-curriculum {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Flexbox para contenedor de Habilidades */
+.skills-container {
+  margin-bottom: 1.5rem;
+}
+
+.skills-container h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Flexbox para Enlaces de Contacto */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: auto; /* Empuja los contactos al final del contenedor flex */
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
   font-weight: 600;
 }
