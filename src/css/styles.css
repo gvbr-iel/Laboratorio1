@@ -1,56 +1,50 @@
+/* ===================================================
+   PASO 1: Variables, Normalización y Modelo de Caja
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@600;700&display=swap');
+
 :root {
   /* 1. Paleta de Colores */
-  --bg-site: #f8f9fa;             /* Fondo del sitio (Gris claro tenue) */
-  --bg-card: #ffffff;             /* Fondo de tarjeta (Blanco) */
-  --color-primary: #004680;       /* Color Primario - Encabezados y Acentos (Azul corporativo) */
-  --text-main: #212529;           /* Texto Principal (Gris oscuro) */
-  --text-secondary: #6c757d;      /* Texto Secundario / Subtítulos (Gris medio) */
-  --badge-bg: #e9ecef;            /* Fondo de badges de habilidades */
-  --badge-text: #004680;          /* Texto de badges de habilidades */
+  --bg-site: #f8f9fa;             /* Fondo del sitio */
+  --bg-card: #ffffff;             /* Fondo de tarjeta */
+  --color-primary: #004680;       /* Color Primario */
+  --color-primary-hover: #003360; /* Variante para hover */
+  --text-main: #212529;           /* Texto Principal[cite: 1] */
+  --text-secondary: #6c757d;      /* Texto Secundario[cite: 1] */
+  --badge-bg: #e9ecef;            /* Fondo de badges[cite: 1] */
+  --badge-text: #004680;          /* Texto de badges[cite: 1] */
 
   /* 2. Tipografía */
   --font-headings: 'Roboto', 'Segoe UI', sans-serif;
   --font-body: 'Open Sans', Arial, sans-serif;
 }
 
-/* Aplicación inicial global opcional */
+/* Reset y Box Model */
+* {
+  box-sizing: border-box; /* Previene desbordamientos recalculando padding/borde */
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--bg-site);
   color: var(--text-main);
   font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem 1rem;
 }
 
 h1, h2, h3 {
   font-family: var(--font-headings);
   color: var(--color-primary);
+  font-weight: 600;
 }
 
-
-/* ===================================================
-   AQUÍ VA CSS GRID (Estructura general del sitio)
-   =================================================== */
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-
-/* ===================================================
-   AQUÍ VA FLEXBOX (Distribución interna de la tarjeta)
-   =================================================== */
+/* Estructura Base de Tarjeta */
 .card-curriculum {
   background-color: var(--bg-card);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Flexbox extra para alinear los enlaces de contacto */
-.contact-links {
-  display: flex;
-}
-
-/* Flexbox extra para alinear las etiquetas de habilidades */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
