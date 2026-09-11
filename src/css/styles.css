@@ -24,3 +24,33 @@ h1, h2, h3 {
   font-family: var(--font-headings);
   color: var(--color-primary);
 }
+
+
+/* ===================================================
+   AQUÍ VA CSS GRID (Estructura general del sitio)
+   =================================================== */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+
+/* ===================================================
+   AQUÍ VA FLEXBOX (Distribución interna de la tarjeta)
+   =================================================== */
+.card-curriculum {
+  background-color: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flexbox extra para alinear los enlaces de contacto */
+.contact-links {
+  display: flex;
+}
+
+/* Flexbox extra para alinear las etiquetas de habilidades */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+}
