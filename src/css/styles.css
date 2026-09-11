@@ -92,3 +92,10 @@ h1, h2, h3 {
   color: var(--text-secondary);
   font-weight: 600;
 }
+
+#gabriel .profile-summary {
+  color: var(--text-main);
+  font-family: var(--font-body);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
