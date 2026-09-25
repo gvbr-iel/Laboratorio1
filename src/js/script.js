@@ -64,6 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.textContent = 'Editar Perfil';
                 button.classList.remove('editing');
                 button.style.backgroundColor = ''; // Restaura el color original
+
+                // Guardar permanentemente
+                saveAllData();
+                alert('Se han cambiado los datos.');
             }
         });
     });
