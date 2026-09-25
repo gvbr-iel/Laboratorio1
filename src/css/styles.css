@@ -1,57 +1,202 @@
-:root {
-  /* 1. Paleta de Colores */
-  --bg-site: #f8f9fa;             /* Fondo del sitio (Gris claro tenue) */
-  --bg-card: #ffffff;             /* Fondo de tarjeta (Blanco) */
-  --color-primary: #004680;       /* Color Primario - Encabezados y Acentos (Azul corporativo) */
-  --text-main: #212529;           /* Texto Principal (Gris oscuro) */
-  --text-secondary: #6c757d;      /* Texto Secundario / Subtítulos (Gris medio) */
-  --badge-bg: #e9ecef;            /* Fondo de badges de habilidades */
-  --badge-text: #004680;          /* Texto de badges de habilidades */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@600;700&display=swap');
 
-  /* 2. Tipografía */
+:root {
+  /* Paleta de Colores */
+  --bg-site: #f8f9fa;             /* Fondo del sitio */
+  --bg-card: #ffffff;             /* Fondo de tarjeta */
+  --color-primary: #004680;       /* Color Primario */
+  --color-primary-hover: #003360; /* Variante para hover */
+  --text-main: #212529;           /* Texto Principal[cite: 1] */
+  --text-secondary: #6c757d;      /* Texto Secundario[cite: 1] */
+  --badge-bg: #e9ecef;            /* Fondo de badges[cite: 1] */
+  --badge-text: #004680;          /* Texto de badges[cite: 1] */
+
+  /* Tipografía */
   --font-headings: 'Roboto', 'Segoe UI', sans-serif;
   --font-body: 'Open Sans', Arial, sans-serif;
 }
 
-/* Aplicación inicial global opcional */
+/* Reset y Box Model */
+* {
+  box-sizing: border-box; /* Previene desbordamientos recalculando padding/borde */
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--bg-site);
   color: var(--text-main);
   font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 2rem 1rem;
 }
 
 h1, h2, h3 {
   font-family: var(--font-headings);
   color: var(--color-primary);
+  font-weight: 600;
 }
 
+/* Estructura Base de Tarjeta */
+.card-curriculum {
+  background-color: var(--bg-card);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
 
-/* ===================================================
-   AQUÍ VA CSS GRID (Estructura general del sitio)
-   =================================================== */
+/* Encabezado de Perfil */
+.profile-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.profile-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-header h2 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Resumen Profesional */
+.profile-summary {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Proyecto Destacado */
+.project-box {
+  background-color: var(--bg-site);
+  border-left: 4px solid var(--color-primary);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.project-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-box p {
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+/* Badges de Habilidades */
+.badge-skill {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* CSS Grid para el contenedor principal de tarjetas */
 .team-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Flexbox para la estructura interna de la Tarjeta */
 /* ===================================================
    AQUÍ VA FLEXBOX (Distribución interna de la tarjeta)
    =================================================== */
 .card-curriculum {
-  background-color: var(--bg-card);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Flexbox extra para alinear los enlaces de contacto */
-.contact-links {
-  display: flex;
-}
-
-/* Flexbox extra para alinear las etiquetas de habilidades */
+/* Flexbox para contenedor de Habilidades */
 .skills-container {
+  margin-bottom: 1.5rem;
+}
+
+.skills-container h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.skills-wrapper {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Flexbox para Enlaces de Contacto */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: auto; /* Empuja los contactos al final del contenedor flex */
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Pseudo-clases para interactividad */
+.contact-links a {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-links a:hover {
+  background-color: var(--color-primary-hover); /* Cambio de color al pasar el cursor[cite: 2] */
+  transform: translateY(-2px);
+}
+
+.contact-links a:focus {
+  outline: 2px solid var(--color-primary); /* Accesibilidad con teclado[cite: 2] */
+  outline-offset: 2px;
+}
+
+/* Media Query para pantallas pequeñas (Móviles) */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .card-curriculum {
+    padding: 1.25rem;
+  }
+
+  .contact-links {
+    flex-direction: column; /* Cambia a columna en celulares */
+    width: 100%;
+  }
+
+  .contact-links a {
+    width: 100%;
+  }
 }
 
 #gabriel .card-curriculum {
