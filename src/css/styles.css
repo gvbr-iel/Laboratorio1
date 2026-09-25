@@ -346,4 +346,10 @@ h1, h2, h3 {
     padding: 1.25rem;           /* Ajusta el espacio interno de las tarjetas */
   }
 }
+
+/* Estilo al activar la clase destacada en la tarjeta */
+#gabriel .card-curriculum.destacado-gabriel {
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
 }
