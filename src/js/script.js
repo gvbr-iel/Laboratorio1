@@ -13,6 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     };
+
+    // Guardar el estado actual de todas las tarjetas
+    const saveAllData = () => {
+        const dataToSave = {};
+        // Asignamos IDs automáticos a los elementos editables si no los tienen
+        document.querySelectorAll('.card-curriculum').forEach((card, cardIdx) => {
+            card.querySelectorAll('.editable').forEach((elem, elemIdx) => {
+                if (!elem.id) {
+                    elem.id = `card-${cardIdx}-elem-${elemIdx}`;
+                }
+                dataToSave[elem.id] = elem.innerHTML;
+            });
+        });
+        localStorage.setItem('curriculumData', JSON.stringify(dataToSave));
+    };
+
+    // Inicializamos la carga de datos
+    loadSavedData();
     
     // Seleccionamos todos los botones de edición
     const editButtons = document.querySelectorAll('.btn-edit');
