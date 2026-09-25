@@ -353,3 +353,13 @@ h1, h2, h3 {
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
     transition: all 0.3s ease;
 }
+
+/* Estilo para simular expansión u ocultamiento de proyectos */
+#gabriel .project-box {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#gabriel .project-box:hover {
+    background-color: #f8f9fa;
+}
