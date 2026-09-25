@@ -282,3 +282,29 @@ h1, h2, h3 {
   padding: 0.35rem 0.75rem;
   border-radius: 50px;
 }
+
+/* Botón de Edición */
+.btn-edit {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.6rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Indicador visual cuando un elemento se puede editar */
+[contenteditable="true"] {
+  outline: 2px dashed #004680;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
