@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Persistencia de datos en el Local Storage
+    // Cargar datos guardados previamente
+    const loadSavedData = () => {
+        const savedData = localStorage.getItem('curriculumData');
+        if (savedData) {
+            const parsedData = JSON.parse(savedData);
+            Object.keys(parsedData).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.innerHTML = parsedData[id];
+                }
+            });
+        }
+    };
+    
     // Seleccionamos todos los botones de edición
     const editButtons = document.querySelectorAll('.btn-edit');
 
