@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializamos la carga de datos
     loadSavedData();
     
+    // 2. Editar y guardar cambios
     // Seleccionamos todos los botones de edición
     const editButtons = document.querySelectorAll('.btn-edit');
 
@@ -68,6 +69,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Guardar permanentemente
                 saveAllData();
                 alert('Se han cambiado los datos.');
+            }
+        });
+    });
+
+    // 3. Secciones acordeón
+
+    // Seleccionamos los encabezados de las secciones que actuarán como botones desplegables
+    const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+
+    collapsibleHeaders.forEach(header => {
+        header.addEventListener('click', (e) => {
+            // Si se está editando el texto en ese momento, no se comprime la sección
+            if (e.target.isContentEditable) return;
+
+            const sectionContent = header.nextElementSibling;
+            
+            // Alternar visibilidad de la sección
+            header.classList.toggle('active');
+            
+            if (sectionContent.style.maxHeight) {
+                sectionContent.style.maxHeight = null;
+                sectionContent.style.opacity = '0';
+                sectionContent.style.padding = '0';
+            } else {
+                sectionContent.style.maxHeight = sectionContent.scrollHeight + "px";
+                sectionContent.style.opacity = '1';
             }
         });
     });
