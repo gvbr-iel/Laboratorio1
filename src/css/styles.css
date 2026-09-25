@@ -307,6 +307,32 @@ h1, h2, h3 {
   opacity: 0.85;
 }
 
+/* Botón de Edición */
+.btn-edit {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.6rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Indicador visual cuando un elemento se puede editar */
+[contenteditable="true"] {
+  outline: 2px dashed #004680;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* ==========================================
    Paso 5: Diseño Responsivo (Media Query)
    ========================================== */
@@ -319,4 +345,5 @@ h1, h2, h3 {
   .card-curriculum {
     padding: 1.25rem;           /* Ajusta el espacio interno de las tarjetas */
   }
+}
 }
