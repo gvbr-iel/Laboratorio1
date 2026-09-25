@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Profesional - Gabriel y Matías</title>
     <link rel="stylesheet" href="src/css/styles.css">
+    <script src="src/js/script.js" defer></script>
 </head>
 <body>
 
@@ -15,20 +16,20 @@
             <div class="card-curriculum">
                 <div class="profile-header">
                     <img src="src/img/gabriel.jpg" alt="Foto Gabriel" class="avatar">
-                    <h2>Gabriel Jorquera</h2>
-                    <p class="role">Desarrollador Web Junior</p>
+                    <h2 class="editable">Gabriel Jorquera</h2>  <!-- Se agrega la función clase editable para permitir la edición del nombre -->
+                    <p class="role editable">Desarrollador Web Junior</p>
                 </div>
             
-                <div class="profile-summary">
+                <div class="profile-summary editable">
                     <p>Estudiante de Ingeniería en Informática con interés en Inteligencia Artificial.</p>
                 </div>
             
                 
-                <div class="profile-summary">
+                <div class="profile-summary editable">
                     <p>Estudiante de Ingeniería en Informática con interés en Inteligencia Artificial.</p>
                 </div>
                 
-                <div class="project-box">
+                <div class="project-box editable">
                     <h3>Proyecto: Termómetro con Arduino</h3>
                     <p>Construcción de un termómetro digital utilizando un sensor de temperatura y una placa Arduino.</p>
                     <h3>Proyecto: Sistema de Control de Luces</h3>
@@ -37,10 +38,13 @@
             
                 
                 <div class="skills-container">
-                    <span class="badge-skill">ArduinoUNO</span>
-                    <span class="badge-skill">C++</span>
-                    <span class="badge-skill">Ingeniería</span>
-                    <span class="badge-skill">Git</span>
+                    <h3>Habilidades:</h3>
+                    <div class="skills-wrapper editable">
+                        <span class="badge-skill">ArduinoUNO</span>
+                        <span class="badge-skill">C++</span>
+                        <span class="badge-skill">Ingeniería</span>
+                        <span class="badge-skill">Git</span>
+                    </div>
                 </div>
             
                 
@@ -56,30 +60,33 @@
             <div class="card-curriculum">
                 <div class="profile-header">
                     <img src="src/img/matias.png" alt="Foto Matías" class="avatar">
-                    <h2>Matías Valencia</h2>
-                    <p class="role">Desarrollador Web Junior</p>
+                    <h2 class="editable">Matías Valencia</h2>
+                    <p class="role editable">Desarrollador Web Junior</p>
                 </div>
             
-                <div class="profile-summary">
+                <div class="profile-summary editable">
                     <p>Estudiante de Ingeniería en Informática con interés en el desarrollo Full Stack y la maquetación responsiva.</p>
                 </div>
             
                 
-                <div class="profile-summary">
+                <div class="profile-summary editable">
                     <p>Estudiante de Ingeniería en Informática con interés en el desarrollo Full Stack y la maquetación responsiva.</p>
                 </div>
                 
-                <div class="project-box">
+                <div class="project-box editable">
                     <h3>Proyecto: App de Gestión de Tareas</h3>
                     <p>Aplicación web interactiva para organizar tareas diarias utilizando arquitectura multicapa y almacenamiento local.</p>
                 </div>
             
                 
                 <div class="skills-container">
-                    <span class="badge-skill">HTML5</span>
-                    <span class="badge-skill">CSS3</span>
-                    <span class="badge-skill">JavaScript</span>
-                    <span class="badge-skill">Git</span>
+                    <h3>Habilidades:</h3>
+                    <div class="skills-wrapper editable">
+                        <span class="badge-skill">HTML5</span>
+                        <span class="badge-skill">CSS3</span>
+                        <span class="badge-skill">JavaScript</span>
+                        <span class="badge-skill">Git</span>
+                    </div>
                 </div>
             
                 
@@ -87,6 +94,9 @@
                     <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
+
+                <!-- Botón para activar y desactivar la edición -->
+                <button class="btn-edit">Editar perfil</button>
             </div>
         </section>
     </main>
