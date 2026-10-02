@@ -1,15 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 
-import { createContext, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react'
+import { createContext, useState, type ReactNode } from 'react'
 
 export interface Usuario {
   nombre: string
-  email: string
 }
 
 export interface AuthContextType {
   usuario: Usuario | null
-  setUsuario: Dispatch<SetStateAction<Usuario | null>>
+  iniciarSesion: (nombre: string) => void
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null)
@@ -21,8 +20,12 @@ interface AuthProviderProps {
 export function AuthProvider({ children }: AuthProviderProps) {
   const [usuario, setUsuario] = useState<Usuario | null>(null)
 
+  function iniciarSesion(nombre: string) {
+    setUsuario({ nombre })
+  }
+
   return (
-    <AuthContext.Provider value={{ usuario, setUsuario }}>
+    <AuthContext.Provider value={{ usuario, iniciarSesion }}>
       {children}
     </AuthContext.Provider>
   )
