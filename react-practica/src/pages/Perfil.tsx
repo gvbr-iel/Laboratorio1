@@ -22,7 +22,22 @@ function Perfil() {
     )
   }
 
-  return <main>Perfil de {authContext.usuario?.nombre}</main>
+  return (
+    <main>
+      <header>
+        <Link to="/">Plataforma</Link>
+        <h1>Perfil de Gabriel Jorquera</h1>
+      </header>
+      <article>
+        <p>Integrante del Laboratorio 1</p>
+        <h2>Plataforma de práctica con React y TypeScript</h2>
+        <p>
+          Aplicación web creada con Vite, con rutas para la página principal,
+          el inicio de sesión y los perfiles de usuario.
+        </p>
+      </article>
+    </main>
+  )
 }
 
 export default Perfil
