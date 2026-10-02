@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 
@@ -6,12 +6,22 @@ function Perfil() {
   const { usuario: nombreUrl } = useParams<{ usuario: string }>()
   const authContext = useContext(AuthContext)
   const [meGusta, setMeGusta] = useState<number>(0)
+  const usuarioCoincide = authContext?.usuario?.nombre === nombreUrl
+
+  useEffect(() => {
+    if (!nombreUrl || !usuarioCoincide) {
+      return
+    }
+
+    localStorage.setItem(
+      `perfil:${nombreUrl}:ultima-visita`,
+      new Date().toISOString(),
+    )
+  }, [nombreUrl, usuarioCoincide])
 
   if (!authContext) {
     throw new Error('Perfil debe renderizarse dentro de un AuthProvider')
   }
-
-  const usuarioCoincide = authContext.usuario?.nombre === nombreUrl
 
   if (!usuarioCoincide) {
     return (
