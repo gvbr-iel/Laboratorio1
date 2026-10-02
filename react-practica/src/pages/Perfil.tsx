@@ -7,17 +7,13 @@ function Perfil() {
   const { usuario: usuarioUrl } = useParams<{ usuario: string }>()
   const authContext = useContext(AuthContext)
   const [vistas, setVistas] = useState(0)
+  const [meGusta, setMeGusta] = useState(0)
+
   const nombreUsuario = authContext?.usuario?.nombre
+  const usuarioCoincide = authContext?.usuario?.nombre === usuarioUrl
 
   useEffect(() => {
-    if (!nombreUsuario || usuarioUrl !== nombreUsuario) {
-  const { usuario: nombreUrl } = useParams<{ usuario: string }>()
-  const authContext = useContext(AuthContext)
-  const [meGusta, setMeGusta] = useState<number>(0)
-  const usuarioCoincide = authContext?.usuario?.nombre === nombreUrl
-
-  useEffect(() => {
-    if (!nombreUrl || !usuarioCoincide) {
+    if (!nombreUsuario || !usuarioCoincide) {
       return
     }
 
@@ -25,11 +21,7 @@ function Perfil() {
       `ultimaVisitaPerfil:${nombreUsuario}`,
       new Date().toISOString(),
     )
-  }, [nombreUsuario, usuarioUrl])
-      `perfil:${nombreUrl}:ultima-visita`,
-      new Date().toISOString(),
-    )
-  }, [nombreUrl, usuarioCoincide])
+  }, [nombreUsuario, usuarioCoincide])
 
   if (!authContext) {
     throw new Error('Perfil debe renderizarse dentro de un AuthProvider')
@@ -56,13 +48,6 @@ function Perfil() {
           <Link to={`/perfil/${encodeURIComponent(usuario.nombre)}`}>
             Ir a mi perfil
           </Link>
-  if (!usuarioCoincide) {
-    return (
-      <main className="profile-page">
-        <section className="profile-message">
-          <h1>Perfil no disponible</h1>
-        <p>Inicia sesión con el usuario correspondiente para ver este perfil.</p>
-        <Link to="/login">Ir a iniciar sesión</Link>
         </section>
       </main>
     )
@@ -92,17 +77,7 @@ function Perfil() {
           type="button"
         >
           Registrar vista
-      <header className="profile-header">
-        <Link className="profile-brand" to="/">Plataforma</Link>
-        <h1>Perfil de Gabriel Jorquera</h1>
-      </header>
-      <article className="gabriel-profile-card">
-        <p className="profile-eyebrow">Integrante del Laboratorio 1</p>
-        <h2>Plataforma de práctica con React y TypeScript</h2>
-        <p className="profile-project-description">
-          Aplicación web creada con Vite, con rutas para la página principal,
-          el inicio de sesión y los perfiles de usuario.
-        </p>
+        </button>
         <button
           className="profile-like-button"
           type="button"
