@@ -1,0 +1,119 @@
+.landing-page {
+  min-height: 100svh;
+  color: #18212f;
+  text-align: left;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.11), transparent 52%),
+    #f8f9fc;
+}
+
+.landing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px clamp(24px, 7vw, 96px);
+  border-bottom: 1px solid #e7eaf0;
+}
+
+.landing-brand {
+  color: #18212f;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.landing-login-link {
+  color: #4338ca;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.landing-login-link:hover {
+  text-decoration: underline;
+}
+
+.landing-hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(80px, 14vh, 144px) 24px 88px;
+  text-align: center;
+}
+
+.landing-eyebrow {
+  margin-bottom: 18px;
+  color: #4f46e5;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.landing-hero h1 {
+  margin: 0;
+  color: #18212f;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.landing-description {
+  max-width: 570px;
+  margin: 24px auto 32px;
+  color: #596579;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.landing-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 8px;
+  color: #fff;
+  background: #4f46e5;
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.landing-cta:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.landing-cta:focus-visible,
+.landing-login-link:focus-visible,
+.landing-brand:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 4px;
+}
+
+.landing-info {
+  padding: 40px 24px 64px;
+  border-top: 1px solid #e7eaf0;
+  text-align: center;
+}
+
+.landing-info h2 {
+  margin-bottom: 12px;
+  color: #18212f;
+}
+
+.landing-info p {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #596579;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-cta {
+    transition: none;
+  }
+}
