@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 import './Perfil.css'
@@ -7,6 +7,18 @@ function Perfil() {
   const { usuario: usuarioUrl } = useParams<{ usuario: string }>()
   const authContext = useContext(AuthContext)
   const [vistas, setVistas] = useState(0)
+  const nombreUsuario = authContext?.usuario?.nombre
+
+  useEffect(() => {
+    if (!nombreUsuario || usuarioUrl !== nombreUsuario) {
+      return
+    }
+
+    localStorage.setItem(
+      `ultimaVisitaPerfil:${nombreUsuario}`,
+      new Date().toISOString(),
+    )
+  }, [nombreUsuario, usuarioUrl])
 
   if (!authContext) {
     throw new Error('Perfil debe renderizarse dentro de un AuthProvider')
