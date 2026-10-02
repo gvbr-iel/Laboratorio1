@@ -1,4 +1,105 @@
 .profile-page {
+  display: grid;
+  min-height: 100svh;
+  align-items: center;
+  justify-items: center;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  color: #18212f;
+  background: #f8f9fc;
+}
+
+.profile-card,
+.profile-message {
+  width: min(100%, 480px);
+  padding: 32px;
+  box-sizing: border-box;
+  border: 1px solid #e3e7ef;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(24, 33, 47, 0.08);
+  text-align: left;
+}
+
+.profile-eyebrow {
+  margin-bottom: 10px;
+  color: #4f46e5;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-card h1,
+.profile-message h1 {
+  margin: 0 0 24px;
+  color: #18212f;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.profile-details {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.profile-details dt {
+  margin-bottom: 4px;
+  color: #596579;
+  font-size: 0.85rem;
+}
+
+.profile-details dd {
+  margin: 0;
+  color: #18212f;
+  font-weight: 600;
+}
+
+.profile-views {
+  margin-top: 28px;
+  color: #596579;
+}
+
+.profile-view-button {
+  min-height: 44px;
+  margin-top: 16px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  background: #4f46e5;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.profile-view-button:hover {
+  background: #4338ca;
+}
+
+.profile-view-button:focus-visible,
+.profile-message a:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 4px;
+}
+
+.profile-message h1 {
+  font-size: 1.5rem;
+}
+
+.profile-message a {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .profile-card,
+  .profile-message {
+    padding: 24px;
+  }
+}
   min-height: 100svh;
   padding: 0 24px 64px;
   box-sizing: border-box;
