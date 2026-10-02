@@ -1,0 +1,76 @@
+.login-page {
+  display: grid;
+  min-height: 100svh;
+  align-items: center;
+  justify-items: center;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  color: #18212f;
+  background: #f8f9fc;
+  text-align: left;
+}
+
+.login-form-section {
+  width: min(100%, 400px);
+}
+
+.login-home-link {
+  color: #18212f;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-form-section h1 {
+  margin: 36px 0 28px;
+  color: #18212f;
+  font-size: 2rem;
+  letter-spacing: 0;
+}
+
+.login-form {
+  display: grid;
+  gap: 12px;
+}
+
+.login-form label {
+  color: #303b4d;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.login-form input {
+  width: 100%;
+  min-height: 46px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  border: 1px solid #cbd1dc;
+  border-radius: 5px;
+  color: #18212f;
+  background: #fff;
+  font: inherit;
+}
+
+.login-form input:focus-visible,
+.login-home-link:focus-visible,
+.login-form button:focus-visible {
+  outline: 3px solid #91b8af;
+  outline-offset: 3px;
+}
+
+.login-form button {
+  min-height: 46px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: #23685b;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background: #1b554a;
+}
