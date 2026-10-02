@@ -1,13 +1,24 @@
-import { useState, type FormEvent } from 'react'
-import { Link } from 'react-router-dom'
+import { useContext, useState, type FormEvent } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../AuthContext'
 import './Login.css'
 
 function Login() {
   const [nombreUsuario, setNombreUsuario] = useState<string>('')
   const [contrasena, setContrasena] = useState<string>('')
+  const authContext = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  if (!authContext) {
+    throw new Error('Login debe renderizarse dentro de un AuthProvider')
+  }
+
+  const { iniciarSesion } = authContext
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    iniciarSesion(nombreUsuario)
+    navigate(`/perfil/${encodeURIComponent(nombreUsuario)}`)
   }
 
   return (
