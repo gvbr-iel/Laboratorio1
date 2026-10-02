@@ -283,6 +283,30 @@ h1, h2, h3 {
   border-radius: 50px;
 }
 
+#gabriel .contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-top: 1px solid var(--badge-bg);
+  padding-top: 1.25rem;
+}
+
+#gabriel .contact-links a {
+  background-color: var(--color-primary);
+  color: var(--bg-card);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+}
+
+#gabriel .contact-links a:hover {
+  opacity: 0.85;
+}
+
 /* Botón de Edición */
 .btn-edit {
   display: block;
@@ -348,3 +372,33 @@ h1, h2, h3 {
   opacity: 0;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
 }
+/* ==========================================
+   Paso 5: Diseño Responsivo (Media Query)
+   ========================================== */
+@media (max-width: 600px) {
+  .team-container {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    padding: 1rem 0.5rem;       /* Reduce los márgenes laterales */
+  }
+
+  .card-curriculum {
+    padding: 1.25rem;           /* Ajusta el espacio interno de las tarjetas */
+  }
+}
+
+/* Estilo al activar la clase destacada en la tarjeta */
+#gabriel .card-curriculum.destacado-gabriel {
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Estilo para simular expansión u ocultamiento de proyectos */
+#gabriel .project-box {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#gabriel .project-box:hover {
+    background-color: #f8f9fa;
+}/**/
