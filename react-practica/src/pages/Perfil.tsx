@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 import './Perfil.css'
 
 function Perfil() {
   const { usuario: usuarioUrl } = useParams<{ usuario: string }>()
   const authContext = useContext(AuthContext)
+  const navigate = useNavigate()
   const [vistas, setVistas] = useState(0)
   const [meGusta, setMeGusta] = useState(0)
 
@@ -27,7 +28,7 @@ function Perfil() {
     throw new Error('Perfil debe renderizarse dentro de un AuthProvider')
   }
 
-  const { usuario } = authContext
+  const { usuario, cerrarSesion } = authContext
 
   if (!usuario) {
     return (
@@ -84,6 +85,16 @@ function Perfil() {
           onClick={() => setMeGusta((cantidad) => cantidad + 1)}
         >
           Me gusta: {meGusta}
+        </button>
+        <button
+          className="profile-logout-button"
+          type="button"
+          onClick={() => {
+            cerrarSesion()
+            navigate('/')
+          }}
+        >
+          Cerrar sesión
         </button>
       </article>
     </main>
