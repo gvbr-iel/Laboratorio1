@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Currículum Vitae{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
 </head>
 <body>
-    <a href="#contenido">Saltar al contenido</a>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <header>
-        <h1>Currículum Vitae</h1>
-        <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#perfil">Perfil</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#formacion">Formación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="site-brand" href="{% url 'home' %}">Currículum Vitae</a>
+            <nav aria-label="Navegación principal">
+                <ul class="site-nav">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'cv_ejemplo' %}">CV de ejemplo</a></li>
+                    <li><a href="{% url 'cv_gabriel' %}">CV de Gabriel</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main id="contenido">
+    <main class="site-main" id="contenido">
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        <p>&copy; {% now "Y" %} Currículum Vitae</p>
+    <footer class="site-footer">
+        <p>&copy; {% now "Y" %} Currículum Vitae <span>Hecho para presentar y compartir tu trayectoria.</span></p>
     </footer>
 </body>
 </html>
