@@ -39,3 +39,31 @@ def cv_ejemplo(request):
         ],
     }
     return render(request, "cv/cv_ejemplo.html", contexto)
+
+def cv_matias_valencia(request):
+    contexto = {
+        "nombre": "Matías Valencia",
+        "titulo_profesional": "Estudiante de Ingeniería Civil en Computación e Informática",
+        "contacto": {
+            "email": "matias.valencia@alumnos.ucentral.cl",
+            "telefono": "+56 9 6819 8651",
+            "ciudad": "Coquimbo, Chile",
+        },
+        "habilidades": [
+            "Python",
+            "React",
+            "Django",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "experiencia": [
+            {
+                "puesto": "Desarrollador",
+                "empresa": "PRUFODIS Universidad Central Región de Coquimbo",
+                "periodo": "2026",
+                "descripcion": "Desarrollo de sistema de gestión de alumnos.",
+            },
+        ],
+    }
+    return render(request, "cv/cv_matias_valencia.html", contexto)
