@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cv/', views.home, name='cv_home'),
     path('cv/ejemplo/', views.cv_ejemplo, name='cv_ejemplo'),
+    path('cv/gabriel-jorquera/', views.cv_gabriel, name='cv_gabriel'),
 ]
