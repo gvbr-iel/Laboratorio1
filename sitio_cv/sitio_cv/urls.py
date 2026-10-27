@@ -21,5 +21,6 @@ from cv import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
-    path('cv/', views.home)
+    path('cv/', views.home, name='cv_home'),
+    path('cv/ejemplo/', views.cv_ejemplo, name='cv_ejemplo'),
 ]
