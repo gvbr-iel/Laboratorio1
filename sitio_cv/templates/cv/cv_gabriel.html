@@ -3,39 +3,52 @@
 {% block title %}CV de Gabriel Jorquera | Currículum Vitae{% endblock %}
 
 {% block content %}
-    <article aria-labelledby="nombre">
-        <section id="inicio">
-            <h2 id="nombre">{{ nombre }}</h2>
-            <p>{{ titulo_profesional }}</p>
-        </section>
+    <article class="cv-card" aria-labelledby="nombre">
+        <header class="cv-hero" id="inicio">
+            <div class="cv-avatar" aria-hidden="true">{{ nombre|slice:":1" }}</div>
+            <div>
+                <p class="eyebrow">Currículum vitae</p>
+                <h1 id="nombre">{{ nombre }}</h1>
+                <p class="cv-title">{{ titulo_profesional }}</p>
+            </div>
+            <a class="button button-primary cv-action" href="#contacto">Contactar</a>
+        </header>
 
-        <section id="contacto" aria-labelledby="contacto-titulo">
-            <h3 id="contacto-titulo">Contacto</h3>
-            <ul>
-                <li>Correo electrónico: {{ contacto.email }}</li>
-                <li>Teléfono: {{ contacto.telefono }}</li>
-                <li>Ciudad: {{ contacto.ciudad }}</li>
-            </ul>
-        </section>
+        <div class="cv-content">
+            <aside class="cv-sidebar">
+                <section class="cv-section" id="contacto" aria-labelledby="contacto-titulo">
+                    <h2 id="contacto-titulo">Contacto</h2>
+                    <ul class="contact-list">
+                        <li><span class="detail-label">Correo electrónico</span><span>{{ contacto.email }}</span></li>
+                        <li><span class="detail-label">Teléfono</span><span>{{ contacto.telefono }}</span></li>
+                        <li><span class="detail-label">Ciudad</span><span>{{ contacto.ciudad }}</span></li>
+                    </ul>
+                </section>
 
-        <section id="habilidades" aria-labelledby="habilidades-titulo">
-            <h3 id="habilidades-titulo">Habilidades</h3>
-            <ul>
-                {% for habilidad in habilidades %}
-                    <li>{{ habilidad }}</li>
-                {% endfor %}
-            </ul>
-        </section>
+                <section class="cv-section" id="perfil" aria-labelledby="habilidades-titulo">
+                    <h2 id="habilidades-titulo">Habilidades</h2>
+                    <ul class="skill-list">
+                        {% for habilidad in habilidades %}
+                            <li>{{ habilidad }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </aside>
 
-        <section id="experiencia" aria-labelledby="experiencia-titulo">
-            <h3 id="experiencia-titulo">Experiencia</h3>
-            {% for trabajo in experiencia %}
-                <article>
-                    <h4>{{ trabajo.puesto }} - {{ trabajo.empresa }}</h4>
-                    <p>{{ trabajo.periodo }}</p>
-                    <p>{{ trabajo.descripcion }}</p>
-                </article>
-            {% endfor %}
-        </section>
+            <section class="cv-section experience-section" id="experiencia" aria-labelledby="experiencia-titulo">
+                <p class="eyebrow">Trayectoria</p>
+                <h2 id="experiencia-titulo">Experiencia</h2>
+                <div class="experience-list">
+                    {% for trabajo in experiencia %}
+                        <article class="experience-item">
+                            <p class="experience-period">{{ trabajo.periodo }}</p>
+                            <h3>{{ trabajo.puesto }}</h3>
+                            <p class="experience-company">{{ trabajo.empresa }}</p>
+                            <p class="experience-description">{{ trabajo.descripcion }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
     </article>
 {% endblock %}

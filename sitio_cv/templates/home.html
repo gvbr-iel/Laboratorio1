@@ -3,15 +3,43 @@
 {% block title %}Inicio | Currículum Vitae{% endblock %}
 
 {% block content %}
-    <section aria-labelledby="integrantes-titulo">
-        <h2 id="integrantes-titulo">Integrantes del grupo</h2>
-        <ul>
-            {% for integrante in integrantes %}
-                <li><a href="{{ integrante.url }}">{{ integrante.nombre }}</a></li>
-            {% endfor %}
-        </ul>
+    <section class="home-hero" aria-labelledby="home-title">
+        <p class="eyebrow">Perfiles profesionales</p>
+        <h1 id="home-title">Tu experiencia, <span>bien presentada.</span></h1>
+        <p class="hero-description">
+            Explora los currículums del equipo y descubre habilidades, experiencia
+            y formas de contacto en un solo lugar.
+        </p>
+        <a class="button button-primary" href="#integrantes">Explorar perfiles</a>
     </section>
 
-    <p><a href="{% url 'cv_ejemplo' %}">Ver CV de ejemplo</a></p>
-    <p><a href="{% url 'cv_gabriel' %}">Ver CV de Gabriel Jorquera</a></p>
+    <section class="profiles-section" id="integrantes" aria-labelledby="integrantes-titulo">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Conoce al equipo</p>
+                <h2 id="integrantes-titulo">Integrantes del grupo</h2>
+            </div>
+            <p>Selecciona un perfil para ver su trayectoria.</p>
+        </div>
+        <ul class="profile-grid">
+            {% for integrante in integrantes %}
+                <li class="profile-tile">
+                    <div class="avatar-mark" aria-hidden="true">{{ integrante.nombre|slice:":1" }}</div>
+                    <div class="profile-tile-copy">
+                        <h3><a href="{{ integrante.url }}">{{ integrante.nombre }}</a></h3>
+                        <p>Perfil profesional</p>
+                    </div>
+                    <a href="{{ integrante.url }}">Ver CV de {{ integrante.nombre }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="example-callout">
+            <div>
+                <p class="eyebrow">¿Buscas inspiración?</p>
+                <h3>Un ejemplo para crear tu propio CV</h3>
+                <p>Revisa una estructura clara para mostrar experiencia, habilidades y contacto.</p>
+            </div>
+            <a href="{% url 'cv_ejemplo' %}">Ver CV de ejemplo</a>
+        </div>
+    </section>
 {% endblock %}
