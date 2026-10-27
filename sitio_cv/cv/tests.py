@@ -24,3 +24,13 @@ class CvEjemploViewTests(TestCase):
         self.assertContains(response, "Python")
         self.assertContains(response, "Estudio Digital Ficticio")
         self.assertContains(response, "Colaboracion en proyectos web")
+
+
+class CvMatiasValenciaViewTests(TestCase):
+    def test_cv_matias_valencia_renders_at_homepage_link(self):
+        response = self.client.get("/cv/matias-valencia/")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "cv/cv_matias_valencia.html")
+        self.assertContains(response, "Matías Valencia")
+        self.assertContains(response, "matias.valencia@alumnos.ucentral.cl")
