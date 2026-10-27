@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cv/', views.home, name='cv_home'),
     path('cv/ejemplo/', views.cv_ejemplo, name='cv_ejemplo'),
+    path('cv/gabriel-jorquera/', views.cv_gabriel, name='cv_gabriel'),
     path('cv/matias-valencia/', views.cv_matias_valencia, name='cv_matias_valencia'),
 ]

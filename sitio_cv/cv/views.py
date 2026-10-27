@@ -40,6 +40,34 @@ def cv_ejemplo(request):
     }
     return render(request, "cv/cv_ejemplo.html", contexto)
 
+
+def cv_gabriel(request):
+    contexto = {
+        "nombre": "Gabriel Jorquera",
+        "titulo_profesional": "Estudiante de desarrollo web",
+        "contacto": {
+            "email": "Completar correo electrónico",
+            "telefono": "Completar teléfono",
+            "ciudad": "Completar ciudad",
+        },
+        "habilidades": [
+            "Python",
+            "Django",
+            "HTML y CSS",
+        ],
+        "experiencia": [
+            {
+                "puesto": "Desarrollo de sitio web de CV",
+                "empresa": "Proyecto académico",
+                "periodo": "2026",
+                "descripcion": (
+                    "Creación de páginas de currículum con Django, "
+                    "vistas, rutas y plantillas HTML."
+                ),
+            },
+        ],
+    }
+    return render(request, "cv/cv_gabriel.html", contexto)
 def cv_matias_valencia(request):
     contexto = {
         "nombre": "Matías Valencia",

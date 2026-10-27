@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}CV de Gabriel Jorquera | Currículum Vitae{% endblock %}
+
+{% block content %}
+    <article aria-labelledby="nombre">
+        <section id="inicio">
+            <h2 id="nombre">{{ nombre }}</h2>
+            <p>{{ titulo_profesional }}</p>
+        </section>
+
+        <section id="contacto" aria-labelledby="contacto-titulo">
+            <h3 id="contacto-titulo">Contacto</h3>
+            <ul>
+                <li>Correo electrónico: {{ contacto.email }}</li>
+                <li>Teléfono: {{ contacto.telefono }}</li>
+                <li>Ciudad: {{ contacto.ciudad }}</li>
+            </ul>
+        </section>
+
+        <section id="habilidades" aria-labelledby="habilidades-titulo">
+            <h3 id="habilidades-titulo">Habilidades</h3>
+            <ul>
+                {% for habilidad in habilidades %}
+                    <li>{{ habilidad }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="experiencia" aria-labelledby="experiencia-titulo">
+            <h3 id="experiencia-titulo">Experiencia</h3>
+            {% for trabajo in experiencia %}
+                <article>
+                    <h4>{{ trabajo.puesto }} - {{ trabajo.empresa }}</h4>
+                    <p>{{ trabajo.periodo }}</p>
+                    <p>{{ trabajo.descripcion }}</p>
+                </article>
+            {% endfor %}
+        </section>
+    </article>
+{% endblock %}

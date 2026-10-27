@@ -26,6 +26,25 @@ class CvEjemploViewTests(TestCase):
         self.assertContains(response, "Colaboracion en proyectos web")
 
 
+class CvGabrielViewTests(TestCase):
+    def test_cv_gabriel_displays_personal_context_and_lists(self):
+        response = self.client.get("/cv/gabriel-jorquera/")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "cv/cv_gabriel.html")
+        self.assertEqual(response.context["nombre"], "Gabriel Jorquera")
+        self.assertContains(response, "Estudiante de desarrollo web")
+        self.assertContains(response, "Python")
+        self.assertContains(response, "Proyecto académico")
+        self.assertContains(response, "sitio web de CV")
+
+    def test_home_links_to_gabriel_cv(self):
+        response = self.client.get("/")
+
+        self.assertContains(
+            response,
+            '<a href="/cv/gabriel-jorquera/">Ver CV de Gabriel Jorquera</a>',
+        )
 class CvMatiasValenciaViewTests(TestCase):
     def test_cv_matias_valencia_renders_at_homepage_link(self):
         response = self.client.get("/cv/matias-valencia/")
