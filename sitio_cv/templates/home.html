@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio | Currículum Vitae{% endblock %}
+
+{% block content %}
+    <section aria-labelledby="integrantes-titulo">
+        <h2 id="integrantes-titulo">Integrantes del grupo</h2>
+        <ul>
+            {% for integrante in integrantes %}
+                <li><a href="{{ integrante.url }}">{{ integrante.nombre }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
