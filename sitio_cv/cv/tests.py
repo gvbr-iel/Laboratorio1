@@ -46,10 +46,24 @@ class CvGabrielViewTests(TestCase):
             '<a href="/cv/gabriel-jorquera/">Ver CV de Gabriel Jorquera</a>',
         )
 class CvMatiasValenciaViewTests(TestCase):
-    def test_cv_matias_valencia_renders_at_homepage_link(self):
+    def test_cv_matias_valencia_renders_styled_profile_and_contact_information(self):
         response = self.client.get("/cv/matias-valencia/")
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "cv/cv_matias_valencia.html")
+        self.assertContains(response, 'class="cv-card"')
+        self.assertContains(response, 'class="experience-item"')
+        self.assertContains(response, 'href="mailto:matias.valencia@alumnos.ucentral.cl">Contactar</a>')
+        self.assertContains(
+            response,
+            'href="mailto:matias.valencia@alumnos.ucentral.cl"',
+        )
         self.assertContains(response, "Matías Valencia")
         self.assertContains(response, "matias.valencia@alumnos.ucentral.cl")
+        self.assertContains(response, "Coquimbo, Chile")
+        self.assertContains(response, "PRUFODIS Universidad Central Región de Coquimbo")
+
+    def test_navigation_links_to_matias_cv(self):
+        response = self.client.get("/cv/matias-valencia/")
+
+        self.assertContains(response, '<a href="/cv/matias-valencia/">CV de Matías</a>')
